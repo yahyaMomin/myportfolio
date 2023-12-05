@@ -24,14 +24,14 @@ const Projects = () => {
               </div>
               <div className="links flex gap-4">
                 <a
-                  href={item.liveLink}
+                  href={item.githubLink}
                   className="github flex justify-center items-center gap-3 px-2 py-1 bg-main text-black rounded-md"
                 >
                   <p className="">Source Code</p>
                   <FaGithub size="20px" />
                 </a>
                 <a
-                  href={item.githubLink}
+                  href={item.liveLink}
                   className="github flex justify-center items-center gap-3 px-2 py-1 bg-main text-black rounded-md"
                 >
                   <p className="">Live Demo</p>
