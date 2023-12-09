@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../assets/luffy.webp";
+import logo from "../assets/user.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const Home = () => {
   return (
     <div className=" my-20  text-center md:text-start gap-2  flex justify-between flex-col-reverse md:flex-row items-center mx-auto">
       <div className="content flex gap-2 flex-col">
-        <h1 className="text-[30px] md:text-[40px] xl:text-[50px] font-semibold">FullStack (MERN) Developer</h1>
+        <h1 className="text-[30px] md:text-[40px] xl:text-[50px] font-semibold">Full Stack (MERN) Developer</h1>
         <p className="text-xl">
           Hi, I'm Yahya Momin. A passionate FullStack Developer
           <br /> based in Gujarat, India. 📍

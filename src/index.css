@@ -36,7 +36,7 @@ html {
 
 .logo {
   animation: animate 8s ease-in-out infinite;
-  border: 2px solid #000;
+  border: 5px solid #000;
 }
 .icons .icon {
   display: flex;
