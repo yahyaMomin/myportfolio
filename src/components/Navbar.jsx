@@ -1,64 +1,64 @@
-import React, { useState } from "react";
-import Theme from "./Theme";
-import { MdClose } from "react-icons/md";
-import { HiOutlineMenu } from "react-icons/hi";
+import React, { useState } from 'react'
+import Theme from './Theme'
+import { MdClose } from 'react-icons/md'
+import { HiOutlineMenu } from 'react-icons/hi'
 
 const Navbar = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [position, setPosition] = useState("show");
+  const [mobileMenu, setMobileMenu] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [position, setPosition] = useState('show')
 
   const toggle = () => {
-    setMobileMenu(!mobileMenu);
-  };
+    setMobileMenu(!mobileMenu)
+  }
 
   const scrollToHome = () => {
-    window.scrollTo(0, 0);
-  };
+    window.scrollTo(0, 0)
+  }
 
   const scrollToAbout = () => {
-    window.scrollTo(0, 573);
-  };
+    window.scrollTo(0, 573)
+  }
   const scrollToProjects = () => {
-    window.scrollTo(0, 1212);
-  };
+    window.scrollTo(0, 1212)
+  }
 
   const scrollToContact = () => {
-    window.scrollTo(0, 6956);
-  };
+    window.scrollTo(0, 6956)
+  }
 
   const scrollToHomeMobile = () => {
-    setMobileMenu(!mobileMenu);
-    window.scrollTo(0, 0);
-  };
+    setMobileMenu(!mobileMenu)
+    window.scrollTo(0, 0)
+  }
 
   const scrollToAboutMobile = () => {
-    setMobileMenu(!mobileMenu);
-    window.scrollTo(0, 1023);
-  };
+    setMobileMenu(!mobileMenu)
+    window.scrollTo(0, 1023)
+  }
   const scrollToProjectsMobile = () => {
-    setMobileMenu(!mobileMenu);
-    window.scrollTo(0, 2060);
-  };
+    setMobileMenu(!mobileMenu)
+    window.scrollTo(0, 2060)
+  }
 
   const scrollToContactMobile = () => {
-    setMobileMenu(!mobileMenu);
-    window.scrollTo(0, 7992);
-  };
+    setMobileMenu(!mobileMenu)
+    window.scrollTo(0, 7992)
+  }
 
-  window.addEventListener("scroll", () => {
-    setLastScrollY(window.scrollY);
+  window.addEventListener('scroll', () => {
+    setLastScrollY(window.scrollY)
     if (lastScrollY < window.scrollY) {
-      setPosition("hide");
+      setPosition('hide')
     } else {
-      setPosition("show");
+      setPosition('show')
     }
-  });
+  })
 
   return (
     <>
       <div
-        className={` navbar ${position} bg-white dark:bg-darkGray flex justify-between items-center py-3  border-b-2 dark:border-gray-700  fixed w-full z-30  px-8 `}
+        className={`  navbar ${position} bg-white dark:bg-darkGray flex justify-between items-center py-3  border-b-2 dark:border-gray-700  fixed w-full z-30  px-8 `}
       >
         <div onClick={scrollToHome} className=" text-base font-semibold  select-none relative  cursor-pointer ">
           YAHYA.DEV
@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
       <ul
         className={`mobileMenu select-none mx-auto absolute w-full top-0 bg-lightBg dark:bg-darkGray overflow-hidden z-10 text-2xl font-semibold  h-screen  flex justify-center items-center flex-col ${
-          mobileMenu ? "open" : "close"
+          mobileMenu ? 'open' : 'close'
         }`}
       >
         <li
@@ -111,7 +111,7 @@ const Navbar = () => {
         </li>
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

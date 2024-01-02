@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "../assets/user.jpg";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import React from 'react'
+import logo from '../assets/myimage.jpg'
+import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 
 const Home = () => {
   return (
@@ -21,10 +21,10 @@ const Home = () => {
         </div>
       </div>
       <div className="logo rounded-full w-[100%] flex justify-center items-center max-w-[350px] h-[350px] overflow-hidden ">
-        <img src={logo} alt="" />
+        <img className="mt-20" src={logo} alt="" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

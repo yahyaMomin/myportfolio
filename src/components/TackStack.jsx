@@ -1,13 +1,13 @@
-import React from "react";
-import html from "../assets/html.svg";
-import css from "../assets/css.svg";
-import js from "../assets/js.svg";
-import bootstrap from "../assets/bootstrap-5-1.svg";
-import tailwind from "../assets/tailwind.svg";
-import react from "../assets/react.svg";
-import express from "../assets/express-109.svg";
-import node from "../assets/nodejs-1.svg";
-import mongodb from "../assets/mongodb-icon-1.svg";
+import React from 'react'
+import html from '../assets/html.svg'
+import css from '../assets/css.svg'
+import js from '../assets/js.svg'
+import bootstrap from '../assets/bootstrap-5-1.svg'
+import tailwind from '../assets/tailwind.svg'
+import react from '../assets/react.svg'
+import express from '../assets/express-109.svg'
+import node from '../assets/nodejs-1.svg'
+import mongodb from '../assets/mongodb-icon-1.svg'
 
 const TackStack = () => {
   return (
@@ -45,7 +45,7 @@ const TackStack = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TackStack;
+export default TackStack

@@ -1,8 +1,8 @@
-import React from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import React from 'react'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
-import { FaGithub } from "react-icons/fa6";
-import data from "./data.js";
+import { FaGithub } from 'react-icons/fa6'
+import data from './data.js'
 
 const Projects = () => {
   return (
@@ -25,14 +25,14 @@ const Projects = () => {
               <div className="links flex gap-4">
                 <a
                   href={item.githubLink}
-                  className="github flex justify-center items-center gap-3 px-2 py-1 bg-main text-black rounded-md"
+                  className="github flex justify-center items-center gap-3 px-2 py-2 border-2 dark:border-[#3b3b3b]  text-black dark:text-white rounded-md"
                 >
                   <p className="">Source Code</p>
                   <FaGithub size="20px" />
                 </a>
                 <a
                   href={item.liveLink}
-                  className="github flex justify-center items-center gap-3 px-2 py-1 bg-main text-black rounded-md"
+                  className="github flex justify-center items-center gap-3 px-2 py-2 border-2 dark:border-[#3b3b3b] text-black dark:text-white rounded-md"
                 >
                   <p className="">Live Demo</p>
                   <FaExternalLinkAlt size="17px" />
@@ -43,7 +43,7 @@ const Projects = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
