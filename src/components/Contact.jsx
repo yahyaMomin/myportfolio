@@ -1,10 +1,10 @@
-import React from "react";
-import { FaEnvelope, FaLocationDot } from "react-icons/fa6";
+import React from 'react'
+import { FaEnvelope, FaLocationDot } from 'react-icons/fa6'
 
 const Contact = ({ text }) => {
   return (
     <>
-      <div className="title mb-10">
+      <div id="contact" className="title mb-10">
         <h1 className="text-blue-500 font-[700]">CONTACT</h1>
         <p className="text-2xl font-[700] mt-2 ">
           Don't be Shy! Hit me up! <span>👇</span>
@@ -31,7 +31,7 @@ const Contact = ({ text }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -6,7 +6,7 @@ import data from './data.js'
 
 const Projects = () => {
   return (
-    <div className="mb-20">
+    <div id="projects" className="mb-20">
       <div className=" text-xl mb-2 ">
         <h1 className="text-blue-400 font-bold">PROJECTS</h1>
         <p className=" text-xl md:text-3xl mt-3 font-semibold">Each project is a unique piece of development 🧩</p>

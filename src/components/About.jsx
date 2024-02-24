@@ -1,9 +1,9 @@
-import React from "react";
-import image from "../assets/4884785.jpg";
+import React from 'react'
+import image from '../assets/4884785.jpg'
 
 const About = () => {
   return (
-    <div className=" mb-20 flex flex-col xl:flex-row gap-5 mx-auto ">
+    <div id="about" className=" mb-20 flex flex-col xl:flex-row gap-5 mx-auto ">
       <img className=" md:w-[410px] mx-auto h-[280px] w-[340px]  md:h-[350px] rounded-xl" src={image} alt="" />
       <div className="aboutMe  text-center md:text-start">
         <h1 className="text-blue-400 font-semibold mb-3">ABOUT ME</h1>
@@ -18,7 +18,7 @@ const About = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
