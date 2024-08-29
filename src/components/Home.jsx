@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Home = () => {
    const [info, setInfo] = useState("");
-   const url = "http://localhost:4002/api/v2/ip";
+   const url = "https://portfolio-backend-sn3n.onrender.com/api/v2/ip";
    const getIP = async () => {
       try {
          const res = await axios.get(url);
