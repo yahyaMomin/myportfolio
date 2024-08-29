@@ -8,20 +8,7 @@ import ContentWrapper from "./components/ContentWrapper";
 import Projects from "./components/Projects";
 
 const App = () => {
-   return (
-      <div className={`bg-lightBg dark:bg-darkGray dark:text-white`}>
-         <Navbar />
-         <ContentWrapper>
-            <Home />
-            <TackStack />
-            <About />
-            <Projects />
-            <Contact />
-         </ContentWrapper>
-         <Footer />
-      </div>
-   );
-};
+   
   return (
     <div className={`bg-lightBg dark:bg-[#1a1a1a] dark:text-white`}>
       <Navbar />
@@ -35,6 +22,6 @@ const App = () => {
       <Footer />
     </div>
   )
-}
+};
 
 export default App;
