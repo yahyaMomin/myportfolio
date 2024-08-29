@@ -1,51 +1,46 @@
-import React from 'react'
-import html from '../assets/html.svg'
-import css from '../assets/css.svg'
-import js from '../assets/js.svg'
-import bootstrap from '../assets/bootstrap-5-1.svg'
-import tailwind from '../assets/tailwind.svg'
-import react from '../assets/react.svg'
-import express from '../assets/express-109.svg'
-import node from '../assets/nodejs-1.svg'
-import mongodb from '../assets/mongodb-icon-1.svg'
+import skills from "../utils/skills";
 
 const TackStack = () => {
-  return (
-    <div>
-      <div className=" flex-wrap mb-20 gap-5 flex justify-start flex-col  items-center ">
-        <h1 className="text-2xl font-semibold  border-b-4 px-4   pb-3 ">Tech Stacks</h1>
-        <div className="icons flex gap-2  flex-wrap content-center items-center justify-center">
-          <div className="icon">
-            <img className="w-11" src={html} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={css} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-9" src={js} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={tailwind} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={bootstrap} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={react} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={node} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={express} alt="SKILL" />
-          </div>
-          <div className="icon">
-            <img className="w-11" src={mongodb} alt="SKILL" />
-          </div>
-        </div>
+   return (
+      <div>
+         <div className="flex flex-col">
+            <h1 className="text-center mb-5">Tech Stacks</h1>
+            {skills.map((item, index) => (
+               <div
+                  key={item?.name}
+                  className="flex dark:border-none dark:bg-[#242423] border px-4 py-3 rounded-md  flex-col mb-5 justify-start items-start"
+               >
+                  <div className="flex justify-between items-center flex-col">
+                     <h1
+                        className={`font-extrabold mb-8 w-full md:w-[50%] text-center px-5 py-2 rounded-2xl`}
+                        style={{
+                           background: `linear-gradient(45deg, ${item?.color.join(
+                              ", "
+                           )})`,
+                        }}
+                     >
+                        {item?.name}
+                     </h1>
+                     <div
+                        className={`icon flex flex-col justify-between items-center gap-3 ${
+                           index % 2 === 0
+                              ? "md:flex-row-reverse"
+                              : "md:flex-row"
+                        } `}
+                     >
+                        <img
+                           className="md:w-36 w-20"
+                           src={item?.logo}
+                           alt={item?.name}
+                        />
+                        <p>{item?.description}</p>
+                     </div>
+                  </div>
+               </div>
+            ))}
+         </div>
       </div>
-    </div>
-  )
-}
+   );
+};
 
-export default TackStack
+export default TackStack;

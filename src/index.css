@@ -3,60 +3,63 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Comfortaa", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   outline: none;
 }
 
 .open {
-  transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
 
-  position: fixed;
-  left: 0;
+   position: fixed;
+   left: 0;
 }
 .close {
-  transition: all 0.3s ease-in-out;
-  left: -100%;
-  position: fixed;
+   transition: all 0.3s ease-in-out;
+   left: -100%;
+   position: fixed;
 }
 .show {
-  top: 0;
+   top: 0;
 }
 .hide {
-  top: -100px;
+   top: -100px;
 }
 .navbar {
-  transition: all ease 0.3s;
+   transition: all ease 0.3s;
 }
 
 .logo {
-  animation: animate 8s ease-in-out infinite;
-  border: 5px solid #000;
+   animation: animate 8s ease-in-out infinite;
+   border: 5px solid #000;
 }
 .icons .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 50%;
-  padding: 10px;
-  height: 50px;
-  width: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   border-radius: 50%;
+   padding: 10px;
+   height: 50px;
+   width: 50px;
 }
 
 @keyframes animate {
-  0% {
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-  }
-  50% {
-    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
-  }
-  100% {
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-  }
+   0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+   }
+   50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+   }
+   100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+   }
 }
