@@ -18,10 +18,6 @@ const Home = () => {
          console.log(error.message);
       }
    };
-   useEffect(() => {
-      getIP();
-   }, []);
-   console.log(info);
 
    return (
       <div
@@ -65,13 +61,25 @@ const Home = () => {
                   </span>
                </a>
             </div>
-            <div>
-               <h1>this is your IP {info?.IP} </h1>
-               <p>
-                  near {info?.city} {info?.region} {info?.country}
-               </p>
-               <p>this is your location {info?.location}</p>
-            </div>
+            {!info && (
+               <button
+                  onClick={getIP}
+                  className="mt-10 dark:bg-textColorDark dark:text-black bg-textColorLight  py-3 rounded-3xl"
+               >
+                  click here to seen magic
+               </button>
+            )}
+            {info && (
+               <div className="mt-10">
+                  <p className="mb-2">your IP : {info?.ip}</p>
+                  <p className="mb-2">
+                     near : {info?.city} {info?.region} {info?.country}
+                  </p>
+                  <p className="mb-2">
+                     this is your Location : {info?.location}
+                  </p>
+               </div>
+            )}
          </div>
          <div className="logo rounded-full w-[100%] flex justify-center items-center max-w-[350px] h-[350px] overflow-hidden ">
             <img className="mt-20" src={logo} alt="" />
