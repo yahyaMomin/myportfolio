@@ -1,15 +1,14 @@
 import axios from "axios";
 import logo from "../assets/projects/myimage.webp";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Home = () => {
    const [info, setInfo] = useState("");
+   const url = "http://localhost:4002/api/v2/ip";
    const getIP = async () => {
       try {
-         const res = await axios.get(
-            "https://portfolio-backend-sn3n.onrender.com/api/v2/ip"
-         );
+         const res = await axios.get(url);
 
          const { data } = res;
 
@@ -29,7 +28,7 @@ const Home = () => {
                Full Stack (MERN) Developer
             </h1>
             <p className="text-xl">
-               Hi, I'm Yahya Momin. A passionate FullStack Developer
+               Hi, I&apos;m Yahya Momin. A passionate FullStack Developer
                <br /> based in Gujarat, India. 📍
             </p>
             <div className="links mt-2 text-3xl flex gap-5 items-center justify-center md:justify-start">
