@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaImagePortrait } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -13,6 +13,9 @@ const Footer = () => {
         </a>
         <a href="https://github.com/yahyamomin">
           <FaGithub />
+        </a>
+        <a href="https://firebasestorage.googleapis.com/v0/b/finstamiles-app.appspot.com/o/posts%2F1704917395244-YahyaMomin_CV.pdf?alt=media&token=8ce9ba8f-ce94-4fd6-b0e8-250aeb096602" target="_blank">
+          <FaImagePortrait />
         </a>
       </div>
     </div>
