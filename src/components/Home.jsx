@@ -1,22 +1,35 @@
 import axios from "axios";
 import logo from "../assets/projects/myimage.webp";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa6";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
    const [info, setInfo] = useState("");
-   const url = "http://localhost:4002/api/v2/ip";
+   const [loading, setLoading] = useState(false);
+   const url = "https://portfolio-backend-sn3n.onrender.com/api/v2/ip";
+   const testURL = "http://localhost:4002/api/v2/ip";
    const getIP = async () => {
       try {
-         const res = await axios.get(url);
+         setLoading(true);
+         const isExist = localStorage.getItem("info");
 
-         const { data } = res;
-
-         setInfo(data.user);
+         if (!isExist) {
+            const res = await axios.get(url);
+            const { user } = res.data;
+            localStorage.setItem("info", JSON.stringify(user));
+            setInfo(user);
+         } else {
+            setInfo(JSON.parse(isExist));
+         }
       } catch (error) {
          console.log(error.message);
+      } finally {
+         setLoading(false);
       }
    };
+   useEffect(() => {
+      getIP();
+   }, []);
 
    return (
       <div
@@ -49,7 +62,7 @@ const Home = () => {
             </div>
             <div>
                <a
-                  className="flex justify-center items-center gap-2 text-textColorLight dark:text-textColorDark"
+                  className="flex mt-5 md:mt-2 justify-center items-center gap-2 text-textColorLight dark:text-textColorDark"
                   target="_blank"
                   rel="noreferrer"
                   href="https://firebasestorage.googleapis.com/v0/b/finstamiles-app.appspot.com/o/posts%2F1704917395244-YahyaMomin_CV.pdf?alt=media&token=dea92200-053f-4a83-93de-c85fe8b5290b"
@@ -60,15 +73,7 @@ const Home = () => {
                   </span>
                </a>
             </div>
-            {!info && (
-               <button
-                  onClick={getIP}
-                  className="mt-10 dark:bg-textColorDark dark:text-black bg-textColorLight  py-3 rounded-3xl"
-               >
-                  click here to seen magic
-               </button>
-            )}
-            {info && (
+            {!loading && info ? (
                <div className="mt-10">
                   <p className="mb-2">your IP : {info?.ip}</p>
                   <p className="mb-2">
@@ -78,6 +83,8 @@ const Home = () => {
                      this is your Location : {info?.location}
                   </p>
                </div>
+            ) : (
+               <div>loading...</div>
             )}
          </div>
          <div className="logo rounded-full w-[100%] flex justify-center items-center max-w-[350px] h-[350px] overflow-hidden ">

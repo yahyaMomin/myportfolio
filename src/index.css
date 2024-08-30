@@ -9,13 +9,18 @@ html {
 * {
    margin: 0;
    padding: 0;
+   border: 0;
+   outline: 0;
    box-sizing: border-box;
    font-family: "Comfortaa", sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   outline: none;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
 }
-
+a {
+   outline: none;
+   user-select: none;
+}
 .open {
    transition: all 0.3s ease-in-out;
 
