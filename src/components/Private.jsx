@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import instance from "../utils/axios";
 import ContentWrapper from "./ContentWrapper";
 import Navbar from "./Navbar";
+import { format } from "timeago.js";
+import { useNavigate } from "react-router-dom";
 
 const Private = () => {
    const [value, setValue] = useState("");
@@ -9,6 +11,8 @@ const Private = () => {
    const [users, setUsers] = useState(null);
    const [loading, setLoading] = useState(false);
    const password = import.meta.env.VITE_APP_ADMIN_PASSWORD;
+
+   const navigate = useNavigate();
 
    const getAllUsers = async () => {
       const res = await instance.get("/users");
@@ -58,22 +62,30 @@ const Private = () => {
                   <>
                      {!msg && users ? (
                         <>
-                           <table className="styled-table">
+                           <table className="styled-table w-20 overflow-scroll text-xs md:text-base">
                               <thead className="bg-red-300">
                                  <tr className="my-2">
                                     <td>IP</td>
                                     <td>city</td>
                                     <td>region</td>
                                     <td>country</td>
+                                    <td>time</td>
                                  </tr>
                               </thead>
                               <tbody>
                                  {users?.map((user) => (
-                                    <tr className="active-row" key={user.ip}>
+                                    <tr
+                                       onClick={() =>
+                                          navigate(`/detail/${user._id}`)
+                                       }
+                                       className="active-row cursor-pointer hover:opacity-[.8]"
+                                       key={user.ip}
+                                    >
                                        <td>{user.ip}</td>
                                        <td>{user.city}</td>
                                        <td>{user.region}</td>
                                        <td>{user.country}</td>
+                                       <td>{format(user.createdAt)}</td>
                                     </tr>
                                  ))}
                               </tbody>

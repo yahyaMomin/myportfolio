@@ -9,12 +9,14 @@ import Projects from "./components/Projects";
 import { Route, Routes } from "react-router-dom";
 import MainRoute from "./components/MainRoute";
 import Private from "./components/Private";
+import UserDetail from "./components/UserDetail";
 
 const App = () => {
    return (
       <Routes>
          <Route path="/" element={<MainRoute />} />
          <Route path="/admin" element={<Private />} />
+         <Route path="/detail/:id" element={<UserDetail />} />
       </Routes>
    );
 };
