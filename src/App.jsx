@@ -6,22 +6,17 @@ import Contact from "./components/Contact";
 import TackStack from "./components/TackStack";
 import ContentWrapper from "./components/ContentWrapper";
 import Projects from "./components/Projects";
+import { Route, Routes } from "react-router-dom";
+import MainRoute from "./components/MainRoute";
+import Private from "./components/Private";
 
 const App = () => {
-   
-  return (
-    <div className={`bg-lightBg dark:bg-[#1a1a1a] dark:text-white`}>
-      <Navbar />
-      <ContentWrapper>
-        <Home />
-        <TackStack />
-        <About />
-        <Projects />
-        <Contact />
-      </ContentWrapper>
-      <Footer />
-    </div>
-  )
+   return (
+      <Routes>
+         <Route path="/" element={<MainRoute />} />
+         <Route path="/admin" element={<Private />} />
+      </Routes>
+   );
 };
 
 export default App;

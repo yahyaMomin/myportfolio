@@ -2,6 +2,7 @@ import { useState } from "react";
 import Theme from "./Theme";
 import { MdClose } from "react-icons/md";
 import { HiOutlineMenu } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
    const [mobileMenu, setMobileMenu] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
             className={`  navbar ${position} bg-lightBg dark:bg-darkGray flex justify-between items-center py-3  border-b-2 dark:border-gray-700  fixed w-full z-30  px-8 `}
          >
             <div className=" text-base font-semibold  select-none relative outline-none  cursor-pointer ">
-               YAHYA.DEV
+               <Link to="/">YAHYA.DEV</Link>
             </div>
             <div className=" mr-5  ml-auto cursor-pointer">{<Theme />}</div>
 

@@ -56,6 +56,42 @@ a {
    height: 50px;
    width: 50px;
 }
+.input-radius {
+   border-radius: 20px 0 0 20px;
+}
+.button-radius {
+   border-radius: 0 20px 20px 0;
+}
+
+.styled-table {
+   border-collapse: collapse;
+   width: 100%;
+   margin: 50px 0;
+   font-size: 0.9em;
+}
+.styled-table thead tr {
+   background-color: #009879;
+   color: #ffffff;
+   text-align: left;
+}
+.styled-table td {
+   padding: 12px 15px;
+}
+.styled-table tbody tr {
+   border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+   background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+   border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+   font-weight: bold;
+   color: #009879;
+}
 
 @keyframes animate {
    0% {

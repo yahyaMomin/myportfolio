@@ -1,26 +1,18 @@
-import axios from "axios";
 import logo from "../assets/projects/myimage.webp";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import instance from "../utils/axios";
 
 const Home = () => {
    const [info, setInfo] = useState("");
    const [loading, setLoading] = useState(false);
-   const url = "https://portfolio-backend-sn3n.onrender.com/api/v2/ip";
-   const testURL = "http://localhost:4002/api/v2/ip";
+
    const getIP = async () => {
       try {
          setLoading(true);
-         const isExist = localStorage.getItem("info");
-
-         if (!isExist) {
-            const res = await axios.get(url);
-            const { user } = res.data;
-            localStorage.setItem("info", JSON.stringify(user));
-            setInfo(user);
-         } else {
-            setInfo(JSON.parse(isExist));
-         }
+         const res = await instance.get("/ip");
+         const { user } = res.data;
+         setInfo(user);
       } catch (error) {
          console.log(error.message);
       } finally {
