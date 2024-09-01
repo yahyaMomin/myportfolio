@@ -62,7 +62,7 @@ const Private = () => {
                   <>
                      {!msg && users ? (
                         <>
-                           <table className="styled-table w-20 overflow-scroll text-xs md:text-base">
+                           <table className="styled-table w-20 overflow-scroll text-sm md:text-base">
                               <thead className="bg-red-300">
                                  <tr className="my-2">
                                     <td>IP</td>
